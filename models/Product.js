@@ -15,7 +15,7 @@ Product.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    product_name: {
+    productName: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -28,7 +28,14 @@ Product.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       isNumeric: true,
-      field: 10, //will this set a default value of 10?
+      defaultValue: 10,
+    },
+    categoryId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: Category,
+        key: "id",
+      },
     },
   },
 
