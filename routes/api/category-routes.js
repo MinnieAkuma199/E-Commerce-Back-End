@@ -1,27 +1,54 @@
-const router = require('express').Router();
-const { Category, Product } = require('../../models');
+const router = require("express").Router();
+const { Category, Product } = require("../../models");
 
 // The `/api/categories` endpoint
+//http://localhost:3001/api/categories
 
-router.get('/', (req, res) => {
+router.get("/", (req, res) => {
   // find all categories
   // be sure to include its associated Products
 });
+//SHOULD I BE USING ASYNC?
+router.get("/", async (req, res) => {
+  try {
+    const allCategoryData = await Category.findAll();
+    res.status(200).json(allCategoryData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-router.get('/:id', (req, res) => {
+router.get("/:id", (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
 });
+//SHOULD I BE USING ASYNC?
+router.get("/:id", (req, res) => {
+ try {
+    const filterCategory = await Category.findByPk(req.params.id, {
+      // HOW WOULD I CHANGE THIS INCLUDE TO DO WHAT I WANT IT TO DO HERE???
+      include: [{ model: Location, through: Trip, as: 'planned_trips' }]
+    });
 
-router.post('/', (req, res) => {
+    if (!filterCategory) {
+      res.status(404).json({ message: 'Nothing found with this id!' });
+      return;
+    }
+
+    res.status(200).json(filterCategory);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+router.post("/", (req, res) => {
   // create a new category
 });
 
-router.put('/:id', (req, res) => {
+router.put("/:id", (req, res) => {
   // update a category by its `id` value
 });
 
-router.delete('/:id', (req, res) => {
+router.delete("/:id", (req, res) => {
   // delete a category by its `id` value
 });
 
