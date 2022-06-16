@@ -7,7 +7,6 @@ const { Tag, Product, ProductTag } = require("../../models");
 router.get("/", async (req, res) => {
   // find all tags
   // be sure to include its associated Product data
-  //**is this Product or ProductTag for models to include, or both?
   try {
     const allTagData = await Tag.findAll({
       include: [{ model: Product }],
@@ -69,7 +68,7 @@ router.delete("/:id", async (req, res) => {
   // delete on tag by its `id` value
   const tagData = await Tag.destroy({
     where: {
-      id: req.params.id, //is this correct?
+      id: req.params.id,
     },
   });
 

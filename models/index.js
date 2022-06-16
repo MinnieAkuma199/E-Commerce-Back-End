@@ -17,7 +17,6 @@ Category.hasMany(Product, {
   foreignKey: "category_id",
 });
 
-//WHAT DOES IT MEAN WHEN IT SAYS THROUGH ProductTag??
 // Products belongToMany Tags (through ProductTag)
 //We are saying here a tag can belong to multiple products
 
