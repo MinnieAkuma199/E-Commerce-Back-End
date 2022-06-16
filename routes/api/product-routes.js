@@ -110,7 +110,6 @@ router.put("/:id", async (req, res) => {
     });
 });
 
-//not working correctly
 router.delete("/:id", async (req, res) => {
   // delete one product by its `id` value
   const productData = await Product.destroy({
