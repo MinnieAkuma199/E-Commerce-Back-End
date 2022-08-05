@@ -4,25 +4,29 @@
 
 ## Description
 
--I built the entire back end for an E-commerce site.
+- Things need to be sold and I created a back end to do just that! 
 
--I learned how to configure a working Express.js API and used Sequelize to interact with a MySQL database.
+- I configured a working Express.js API and used Sequelize to interact with a MySQL database.
 
 ## Table of Contents
 
+- [Technology-Used](#technology-used)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributors](#contributors)
-- [License](#license)
-- [Tests](#tests)
 - [Additional Questions](#additional-questions)
+- [License](#license)
+
+### Technology Used
+
+Tech Used: MySQL, Express, Node, JavaScript, Sequelize
 
 ### Installation
 
-Node.js, Express, and MySQL and other dependencies are installed by using the following command:
+Dependencies are installed by using the following command:
 
 ```md
-npm i
+$ npm i
 ```
 
 ### Usage
@@ -37,9 +41,6 @@ The following video shows all the routes being tested within Insomnia and functi
 
 **https://github.com/MinnieAkuma199**
 
-### Tests
-
-NA
 
 ### Additional Questions
 
